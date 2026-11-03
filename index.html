@@ -7,7 +7,7 @@
 <meta name="description" content="POFEERTJESHUYS: de donkerste poffertjestruck van Nederland. Versgebakken poffertjes, deluxe suites en cosmic streetfood — op straat, op festival en op jouw bruiloft.">
 <meta property="og:title" content="POFEERTJESHUYS — Cosmic Poffertjes Foodtruck">
 <meta property="og:description" content="Versgebakken poffertjes onder een hemel vol sterren. Vind de truck, bestel je mandje of huur ons in voor jouw event.">
-<meta property="og:image" content="images/hero-bg.jpg">
+<meta property="og:image" content="https://esperblok.github.io/website-mmpm-3-b3a-foodtruck/images/hero-bg.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -89,7 +89,7 @@
   .hero-logo{width:210px;height:210px;margin-bottom:26px;mix-blend-mode:screen;filter:drop-shadow(0 0 30px rgba(155,48,255,.35));animation:logo-float 6s ease-in-out infinite}
   @keyframes logo-float{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-12px) rotate(1deg)}75%{transform:translateY(5px) rotate(-1deg)}}
   .hero-subtitle{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:13px;color:rgba(199,139,255,.85);text-transform:uppercase;margin-bottom:14px;opacity:0;animation:fadeUp .8s .5s forwards}
-  .hero-title{font-family:'Cinzel Decorative',serif;font-size:clamp(34px,8.4vw,104px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:6px;line-height:1;text-shadow:0 0 20px rgba(155,48,255,.6),0 0 60px rgba(255,46,166,.3),0 4px 20px rgba(0,0,0,.85);margin-bottom:10px;position:relative;animation:glitch-skew 4s infinite linear alternate-reverse}
+  .hero-title{font-family:'Cinzel Decorative',serif;font-size:clamp(28px,7.2vw,96px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:4px;line-height:1;text-shadow:0 0 20px rgba(155,48,255,.6),0 0 60px rgba(255,46,166,.3),0 4px 20px rgba(0,0,0,.85);margin-bottom:10px;position:relative;animation:glitch-skew 4s infinite linear alternate-reverse}
   .hero-title::before,.hero-title::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%}
   .hero-title::before{animation:glitch-1 3s infinite linear alternate-reverse;clip-path:inset(40% 0 20% 0);color:#ff2ea6;opacity:.7}
   .hero-title::after{animation:glitch-2 2.5s infinite linear alternate-reverse;clip-path:inset(60% 0 10% 0);color:#9b30ff;opacity:.6}
@@ -454,7 +454,8 @@
     .hero-deco{width:250px}
     .hero-logo{width:140px;height:140px}
     .hero-subtitle{font-size:9px;letter-spacing:7px}
-    .hero-tagline{letter-spacing:5px;font-size:12px}
+    .hero-tagline{letter-spacing:4px;font-size:11px}
+    .hero-title{letter-spacing:1px}
     .tickets-box,.cfg-box{padding:34px 20px}
     .rules-grid{grid-template-columns:1fr}
     .gallery-grid{grid-template-columns:1fr}
@@ -592,7 +593,7 @@
             <span class="dish-count">± 4 min baktijd</span>
           </div>
           <button class="dish-add" data-id="cosmic-blackberry" data-name="Cosmic Blackberry" data-price="12.50" data-cat="Deluxe" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Twaalf poffertjes verdronken in warme bramencompote, pure Belgische chocolade en krullen witte chocolade. Een dot zwarte room en eetbaar zilverglitter bovenop. Onze bestseller, en nog steeds het mooist om naar te kijken.</div>
           </div>
         </div>
@@ -609,7 +610,7 @@
             <span class="dish-count">± 2 min baktijd</span>
           </div>
           <button class="dish-add" data-id="eeuwige-zes" data-name="De Eeuwige Zes" data-price="4.25" data-cat="Klassiek" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Zes poffertjes, roomboter, poedersuiker. Meer hebben we niet nodig. De basis waar alles om draait en de reden dat je hier bent.</div>
           </div>
         </div>
@@ -626,7 +627,7 @@
             <span class="dish-count">± 3 min baktijd</span>
           </div>
           <button class="dish-add" data-id="oneindige-twaalf" data-name="Oneindige Twaalf" data-price="7.50" data-cat="Klassiek" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Twaalf poffertjes met een royale dot boter en een sneeuwlaag poedersuiker. Het formaat waarbij de meeste gasten stilstaan.</div>
           </div>
         </div>
@@ -643,7 +644,7 @@
             <span class="dish-count">± 4 min baktijd</span>
           </div>
           <button class="dish-add" data-id="grootmoeders-kring" data-name="Grootmoeders Kring" data-price="10.00" data-cat="Klassiek" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Vijftien poffertjes, dubbele boter en een flinke draai appelstroop van een familieboom uit Twente. Stroop die langzaam van de randen afdruipt, precies zoals het hoort.</div>
           </div>
         </div>
@@ -660,7 +661,7 @@
             <span class="dish-count">± 6 min baktijd</span>
           </div>
           <button class="dish-add" data-id="grote-niets" data-name="De Grote Niets" data-price="11.50" data-cat="Klassiek" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Twintig poffertjes op een schaal, alleen boter en suiker, geen versieringen. Voor wie vindt dat een poffertje voor zich zelf moet spreken. Wordt geserveerd in een zwarte schaal met gouden rand.</div>
           </div>
         </div>
@@ -677,7 +678,7 @@
             <span class="dish-count">± 4 min baktijd</span>
           </div>
           <button class="dish-add" data-id="vuur-rook" data-name="Vuur &amp; Rook" data-price="11.50" data-cat="Deluxe" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Twaalf poffertjes met gezouten karamel die we zelf roken boven beukenspaanders, krokant zeezout en een schilfer gebrande kaneelsuiker. Let op: heter dan ie eruitziet.</div>
           </div>
         </div>
@@ -694,7 +695,7 @@
             <span class="dish-count">± 4 min baktijd</span>
           </div>
           <button class="dish-add" data-id="zwarte-zon" data-name="Zwarte Zon" data-price="12.00" data-cat="Deluxe" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Zwart beslag van active kool, Belgische chocoladesaus, oreocrumble en een kern van warme karamel. Wordt meegegeven met een lepeltje, want je gaat het delen — en dan ben je te laat.</div>
           </div>
         </div>
@@ -712,7 +713,7 @@
             <span class="dish-count">± 5 min baktijd</span>
           </div>
           <button class="dish-add" data-id="boter-goud" data-name="Boter Goud (24k)" data-price="13.50" data-cat="Deluxe" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Twaalf poffertjes met zelfgeklopte honingboter, blokjeshoning van een imker uit Vaassen en eetbaar bladgoud. Belachelijk luxe, serieus lekker.</div>
           </div>
         </div>
@@ -729,7 +730,7 @@
             <span class="dish-count">± 3 min baktijd</span>
           </div>
           <button class="dish-add" data-id="maanmelk" data-name="Maanmelk (Vegan)" data-price="9.50" data-cat="Vegan" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Volledig plantaardig: havermelk, plantaardige boter, geen ei. Niemand proeft het verschil — hooguit de koeien.</div>
           </div>
         </div>
@@ -746,7 +747,7 @@
             <span class="dish-count">± 3 min baktijd</span>
           </div>
           <button class="dish-add" data-id="glutenvrije-kern" data-name="Glutenvrije Kern" data-price="10.50" data-cat="Glutenvrij" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Gebakken op een aparte plaat met rijst- en boekweitmeel, altijd als eerste van de dag om kruisbesmetting te voorkomen. Vraag ervan aan het raam.</div>
           </div>
         </div>
@@ -763,7 +764,7 @@
             <span class="dish-count">± 3 min baktijd</span>
           </div>
           <button class="dish-add" data-id="suikervrije-eclipse" data-name="Suikervrije Eclipse" data-price="10.00" data-cat="Dieet" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Beslag dat alleen gezoet is met dadel en peer, met verse bosbessen en een klontje kwark. Voor wie de zoetigheid wil zonder de piek.</div>
           </div>
         </div>
@@ -779,7 +780,7 @@
             <span class="lineup-genre">Warm / 300 ml</span>
           </div>
           <button class="dish-add" data-id="nebula-chocomelk" data-name="Nebula Chocomelk" data-price="3.50" data-cat="Drank" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Donkere chocolademelk (70%) met een wolk melkschuim en een spikkeltje paars poeder dat gewoon biet is. We zeggen het alleen maar voor de sfeer.</div>
           </div>
         </div>
@@ -795,7 +796,7 @@
             <span class="lineup-genre">Koud / 250 ml</span>
           </div>
           <button class="dish-add" data-id="meteorieten-limonade" data-name="Meteorieten Limonade" data-price="3.20" data-cat="Drank" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Huisgemaakte citroen-vlier limonade met bevroren bessen als ijsklontjes. De bessen rollen als kleine planetoïden in je glas.</div>
           </div>
         </div>
@@ -811,7 +812,7 @@
             <span class="lineup-genre">Bier 0.0 of 6.5% / 250 ml</span>
           </div>
           <button class="dish-add" data-id="donker-nat" data-name="Donker Nat" data-price="4.50" data-cat="Drank" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Donker kruidig bier dat gebrouwen is in Deventer, gemout op karamel en drop. Ook volledig alcoholvrij te krijgen — dezelfde smaak, minder diepte.</div>
           </div>
         </div>
@@ -827,7 +828,7 @@
             <span class="lineup-genre">Warm / dubbel</span>
           </div>
           <button class="dish-add" data-id="cosmic-espresso" data-name="Cosmic Espresso" data-price="2.80" data-cat="Drank" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Dubbele espresso van een branderij in Zutphen. Voor als je nog één rondje poffertjes kunt eten maar niet meer kunt rennen.</div>
           </div>
         </div>
@@ -844,7 +845,7 @@
             <span class="lineup-genre">Extra / 25 g</span>
           </div>
           <button class="dish-add" data-id="extra-boter" data-name="Extra Boter" data-price="0.75" data-cat="Extra" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Een roomboterkrul van 25 gram, op kamertemperatuur, zodat ie meteen wegzakt in de gaatjes. De meest bestelde regel van de dag.</div>
           </div>
         </div>
@@ -861,7 +862,7 @@
             <span class="lineup-genre">Extra / portie</span>
           </div>
           <button class="dish-add" data-id="stroopvloed" data-name="Stroopvloed" data-price="1.00" data-cat="Extra" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Extra warme appelstroop in een zwart kommetje, zodat je zelf kunt doseren. Doe niet alsof je die niet gewoon uit de tuit drinkt.</div>
           </div>
         </div>
@@ -878,7 +879,7 @@
             <span class="lineup-genre">Extra / 1 portie</span>
           </div>
           <button class="dish-add" data-id="kaars-verassing" data-name="Kaars &amp; Verassing" data-price="2.50" data-cat="Extra" onclick="addToCart(event,this)">+ In mandje</button>
-            <div class="lineup-expand">
+          <div class="lineup-expand">
             <div class="lineup-desc">Verjaardag bij de truck? Wij zetten een kaars in een poffertje, het licht gaat uit in de rij en twintig vreemden zingen mee. Inclusief foto die je nooit kwijtraakt.</div>
           </div>
         </div>
