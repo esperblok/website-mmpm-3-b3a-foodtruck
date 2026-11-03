@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POFEERTJESHUYS - Flyer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:80px;min-height:100vh;background:#0a0a0a;font-family:'Rajdhani',sans-serif;padding:80px 0}
+  .page-label{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:6px;color:rgba(255,46,166,.55);text-transform:uppercase;margin-bottom:-60px}
+  .flyer{width:1080px;height:1920px;position:relative;overflow:hidden;background:#000}
+
+  .bg-layer{position:absolute;inset:0;background:url('images/hero-bg.jpg') center/cover no-repeat;filter:brightness(.5) saturate(1.35);z-index:1}
+  .bg-overlay{position:absolute;inset:0;z-index:2}
+  .front .bg-overlay{background:radial-gradient(ellipse 70% 50% at 50% 28%,rgba(155,48,255,.2) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 50% 72%,rgba(255,46,166,.12) 0%,transparent 60%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.1) 30%,rgba(0,0,0,.15) 70%,rgba(6,6,10,.92) 100%)}
+  .back .bg-overlay{background:linear-gradient(180deg,rgba(6,6,10,.97) 0%,rgba(14,8,24,.94) 50%,rgba(6,6,10,.98) 100%)}
+
+  .glow-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:3;pointer-events:none}
+  .glow-orb.purple{width:340px;height:340px;background:rgba(155,48,255,.1);top:9%;left:-4%}
+  .glow-orb.pink{width:280px;height:280px;background:rgba(255,46,166,.08);bottom:14%;right:-3%}
+  .glow-orb.gold{width:200px;height:200px;background:rgba(255,194,94,.06);top:44%;right:6%}
+
+  .front-content,.back-content{position:relative;z-index:10;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;padding:70px 60px}
+
+  /* VOORZIJDE */
+  .logo img{width:280px;height:280px;object-fit:cover;border-radius:24px;border:1px solid rgba(155,48,255,.25);filter:drop-shadow(0 0 34px rgba(155,48,255,.4));margin-bottom:28px}
+  .title{font-family:'Cinzel Decorative',serif;font-size:88px;font-weight:900;color:#fff;letter-spacing:5px;text-transform:uppercase;line-height:1;text-align:center;text-shadow:0 0 22px rgba(155,48,255,.6),0 0 60px rgba(255,46,166,.3),0 4px 20px rgba(0,0,0,.9)}
+  .subtitle{font-family:'Orbitron',sans-serif;font-size:16px;letter-spacing:12px;color:rgba(199,139,255,.85);text-transform:uppercase;margin-top:16px}
+  .tagline{font-family:'Cinzel',serif;font-size:24px;letter-spacing:6px;color:rgba(255,255,255,.55);text-transform:uppercase;margin-top:24px;text-align:center}
+  .divider{width:600px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,46,166,.55),rgba(155,48,255,.55),transparent);margin:34px auto}
+  .divider.thick{height:2px;background:linear-gradient(90deg,transparent,#9b30ff,#ff2ea6,#9b30ff,transparent)}
+
+  .info-bar{display:flex;justify-content:center;align-items:center;gap:46px;margin-bottom:12px}
+  .info-item{text-align:center}
+  .info-label{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:5px;color:rgba(255,46,166,.75);text-transform:uppercase;margin-bottom:6px}
+  .info-value{font-family:'Cinzel',serif;font-size:34px;font-weight:700;color:#fff;letter-spacing:3px;text-shadow:0 0 15px rgba(155,48,255,.4)}
+  .info-value.price{color:#ffc25e;font-size:40px;text-shadow:0 0 18px rgba(255,194,94,.4)}
+  .info-separator{width:1px;height:62px;background:linear-gradient(180deg,transparent,rgba(155,48,255,.5),transparent)}
+
+  .menu-section{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%}
+  .section-label{font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:10px;color:rgba(199,139,255,.75);text-transform:uppercase;margin-bottom:30px}
+  .dish{display:flex;align-items:baseline;justify-content:center;gap:18px;width:660px}
+  .dish-name{font-family:'Cinzel Decorative',serif;font-size:40px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:3px;text-transform:uppercase}
+  .dish-name.headliner{font-size:56px;letter-spacing:5px;background:linear-gradient(135deg,#fff 0%,#e7c8ff 30%,#ff2ea6 65%,#9b30ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 18px rgba(255,46,166,.4))}
+  .dish-dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.22);transform:translateY(-8px)}
+  .dish-price{font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:#ffc25e;letter-spacing:1px}
+  .dish-sub{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;color:rgba(255,46,166,.7);text-transform:uppercase}
+  .dish-group{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .dish-group + .dish-group{margin-top:26px}
+
+  .bottom-section{width:100%;text-align:center;margin-top:auto}
+  .venue-label{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:8px;color:rgba(255,46,166,.7);text-transform:uppercase;margin-bottom:8px}
+  .venue-name{font-family:'Cinzel',serif;font-size:26px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:5px;text-transform:uppercase;margin-bottom:22px}
+  .qr-row{display:flex;align-items:center;justify-content:center;gap:34px;margin-bottom:22px}
+  .qr-row img{width:170px;height:170px;border-radius:14px;filter:drop-shadow(0 0 20px rgba(155,48,255,.4))}
+  .qr-side{text-align:left;max-width:360px}
+  .qr-side .k{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:5px;color:rgba(199,139,255,.8);text-transform:uppercase;margin-bottom:10px}
+  .qr-side .v{font-size:20px;color:rgba(255,255,255,.5);line-height:1.55}
+  .url{font-family:'Orbitron',sans-serif;font-size:15px;letter-spacing:4px;color:rgba(255,194,94,.8)}
+  .bottom-deco{margin-top:16px;display:flex;align-items:center;gap:15px;justify-content:center}
+  .bottom-deco .line{width:130px;height:1px;background:linear-gradient(90deg,transparent,rgba(155,48,255,.4))}
+  .bottom-deco .line:last-child{background:linear-gradient(90deg,rgba(155,48,255,.4),transparent)}
+  .bottom-deco .dot{width:6px;height:6px;background:#ff2ea6;border-radius:50%;box-shadow:0 0 8px #ff2ea6}
+
+  /* ACHTERZIJDE */
+  .back-logo img{width:190px;height:190px;object-fit:cover;border-radius:18px;border:1px solid rgba(155,48,255,.22);filter:drop-shadow(0 0 22px rgba(155,48,255,.35))}
+  .back-title{font-family:'Cinzel Decorative',serif;font-size:46px;font-weight:900;color:#fff;letter-spacing:5px;text-shadow:0 0 20px rgba(155,48,255,.45);margin-top:16px}
+  .back-subtitle{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:9px;color:rgba(255,46,166,.75);text-transform:uppercase;margin-top:10px}
+  .back-divider{width:640px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,46,166,.5),rgba(155,48,255,.5),transparent);margin:26px auto 30px}
+
+  .info-blocks{width:100%;display:flex;flex-direction:column;gap:22px;margin-bottom:30px}
+  .info-block{background:rgba(155,48,255,.05);border:1px solid rgba(155,48,255,.16);border-radius:14px;padding:26px 34px}
+  .info-block-title{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:6px;color:rgba(255,46,166,.8);text-transform:uppercase;margin-bottom:14px;text-align:center}
+  .info-block-body{font-size:20px;color:rgba(255,255,255,.55);line-height:1.7;text-align:center;letter-spacing:.5px}
+  .info-block-body b{color:#fff;font-weight:600}
+  .info-block-body .hl{color:#ffc25e}
+
+  .price-list{width:100%;display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+  .price-row{display:flex;align-items:baseline;gap:14px;width:100%}
+  .price-row .n{font-family:'Cinzel',serif;font-size:25px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:1px}
+  .price-row .d{flex:1;border-bottom:1px dotted rgba(255,255,255,.2);transform:translateY(-6px)}
+  .price-row .p{font-family:'Cinzel',serif;font-size:25px;font-weight:900;color:#ffc25e}
+  .price-col{width:470px}
+  .price-cols{display:flex;gap:60px;justify-content:center;width:100%}
+  .price-col-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:5px;color:rgba(199,139,255,.75);text-transform:uppercase;margin-bottom:14px;text-align:center}
+
+  .packages{display:flex;gap:20px;width:100%;margin-bottom:30px}
+  .package{flex:1;background:rgba(255,46,166,.05);border:1px solid rgba(255,46,166,.2);border-radius:14px;padding:24px 20px;text-align:center}
+  .package.featured{background:linear-gradient(160deg,rgba(155,48,255,.14),rgba(255,46,166,.08));border-color:rgba(255,46,166,.42);box-shadow:0 0 40px rgba(155,48,255,.2)}
+  .package .pn{font-family:'Cinzel Decorative',serif;font-size:22px;color:#fff;letter-spacing:2px;margin-bottom:8px}
+  .package .pd{font-size:16px;color:rgba(255,255,255,.45);line-height:1.5;margin-bottom:12px}
+  .package .pp{font-family:'Cinzel',serif;font-size:30px;font-weight:900;color:#ffc25e}
+  .package .pt{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px}
+
+  @media print{
+    body{background:#fff;padding:0;gap:0}
+    .page-label{display:none}
+    .flyer{page-break-after:always}
+  }
+</style>
+</head>
+<body>
+
+<div class="page-label">Voorzijde</div>
+<div class="flyer front">
+  <div class="bg-layer"></div>
+  <div class="bg-overlay"></div>
+  <div class="glow-orb purple"></div>
+  <div class="glow-orb pink"></div>
+
+  <div class="front-content">
+    <div class="logo"><img src="images/logo.jpg" alt="POFEERTJESHUYS"></div>
+    <div class="title">Poffertjes&shy;huis</div>
+    <div class="subtitle">Cosmic streetfood &middot; Deventer</div>
+    <div class="tagline">Versgebakken onder een hemel vol sterren</div>
+    <div class="divider thick" style="width:420px"></div>
+
+    <div class="info-bar">
+      <div class="info-item"><div class="info-label">Zaterdag</div><div class="info-value">08 november</div></div>
+      <div class="info-separator"></div>
+      <div class="info-item"><div class="info-label">Waar</div><div class="info-value">Waagstraat</div></div>
+      <div class="info-separator"></div>
+      <div class="info-item"><div class="info-label">Vanaf</div><div class="info-value price">&euro; 4,25</div></div>
+    </div>
+
+    <div class="menu-section">
+      <div class="section-label">Op de kaart</div>
+      <div class="dish-group">
+        <div class="dish-sub">Huis-specialiteit &middot; 12 stuks</div>
+        <div class="dish"><span class="dish-name headliner">Cosmic Blackberry</span><span class="dish-dots"></span><span class="dish-price">&euro; 12,50</span></div>
+      </div>
+      <div class="dish-group">
+        <div class="dish"><span class="dish-name">Boter Goud 24k</span><span class="dish-dots"></span><span class="dish-price">&euro; 13,50</span></div>
+        <div class="dish"><span class="dish-name">Vuur &amp; Rook</span><span class="dish-dots"></span><span class="dish-price">&euro; 11,50</span></div>
+        <div class="dish"><span class="dish-name">Zwarte Zon</span><span class="dish-dots"></span><span class="dish-price">&euro; 12,00</span></div>
+      </div>
+      <div class="dish-group">
+        <div class="dish-sub">Klassiek &middot; boter &amp; suiker</div>
+        <div class="dish"><span class="dish-name">De Eeuwige Zes</span><span class="dish-dots"></span><span class="dish-price">&euro; 4,25</span></div>
+        <div class="dish"><span class="dish-name">Oneindige Twaalf</span><span class="dish-dots"></span><span class="dish-price">&euro; 7,50</span></div>
+        <div class="dish"><span class="dish-name">Grootmoeders Kring</span><span class="dish-dots"></span><span class="dish-price">&euro; 10,00</span></div>
+      </div>
+      <div class="dish-group">
+        <div class="dish-sub">Vegan &middot; glutenvrij &middot; suikervrij</div>
+        <div class="dish"><span class="dish-name">Maanmelk</span><span class="dish-dots"></span><span class="dish-price">&euro; 9,50</span></div>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <div class="venue-label">Te vinden op</div>
+      <div class="venue-name">Deventer &middot; Waagstraat &middot; 11:00 &mdash; 18:00</div>
+      <div class="divider" style="width:400px;margin-bottom:24px"></div>
+      <div class="qr-row">
+        <img src="images/qr-bestel.png" alt="QR-code bestellen">
+        <div class="qr-side">
+          <div class="k">Bestel vooraf</div>
+          <div class="v">Scan en zet je mandje klaar &mdash; geen wachten bij het raam, wel warme poffertjes.</div>
+        </div>
+      </div>
+      <div class="url">poffertjeshuys.nl &middot; @poffertjeshuys</div>
+      <div class="bottom-deco"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-label">Achterzijde</div>
+<div class="flyer back">
+  <div class="bg-layer" style="filter:brightness(.18) saturate(1.2)"></div>
+  <div class="bg-overlay"></div>
+  <div class="glow-orb purple" style="top:auto;bottom:6%"></div>
+  <div class="glow-orb gold"></div>
+
+  <div class="back-content">
+    <div class="back-logo"><img src="images/logo.jpg" alt="POFEERTJESHUYS"></div>
+    <div class="back-title">Het hele menu</div>
+    <div class="back-subtitle">Alles wordt gebakken zodra jij bestelt</div>
+    <div class="back-divider"></div>
+
+    <div class="price-cols">
+      <div class="price-col">
+        <div class="price-col-title">Klassiek</div>
+        <div class="price-list">
+          <div class="price-row"><span class="n">De Eeuwige Zes &middot; 6</span><span class="d"></span><span class="p">&euro; 4,25</span></div>
+          <div class="price-row"><span class="n">Oneindige Twaalf &middot; 12</span><span class="d"></span><span class="p">&euro; 7,50</span></div>
+          <div class="price-row"><span class="n">Grootmoeders Kring &middot; 15</span><span class="d"></span><span class="p">&euro; 10,00</span></div>
+          <div class="price-row"><span class="n">De Grote Niets &middot; 20</span><span class="d"></span><span class="p">&euro; 11,50</span></div>
+        </div>
+        <div class="price-col-title" style="margin-top:14px">Dranken</div>
+        <div class="price-list">
+          <div class="price-row"><span class="n">Nebula Chocomelk</span><span class="d"></span><span class="p">&euro; 3,50</span></div>
+          <div class="price-row"><span class="n">Meteorieten Limonade</span><span class="d"></span><span class="p">&euro; 3,20</span></div>
+          <div class="price-row"><span class="n">Donker Nat 0.0 / 6.5%</span><span class="d"></span><span class="p">&euro; 4,50</span></div>
+          <div class="price-row"><span class="n">Cosmic Espresso</span><span class="d"></span><span class="p">&euro; 2,80</span></div>
+        </div>
+      </div>
+      <div class="price-col">
+        <div class="price-col-title">Deluxe</div>
+        <div class="price-list">
+          <div class="price-row"><span class="n">Cosmic Blackberry</span><span class="d"></span><span class="p">&euro; 12,50</span></div>
+          <div class="price-row"><span class="n">Vuur &amp; Rook</span><span class="d"></span><span class="p">&euro; 11,50</span></div>
+          <div class="price-row"><span class="n">Zwarte Zon</span><span class="d"></span><span class="p">&euro; 12,00</span></div>
+          <div class="price-row"><span class="n">Boter Goud 24k</span><span class="d"></span><span class="p">&euro; 13,50</span></div>
+        </div>
+        <div class="price-col-title" style="margin-top:14px">Vrij &amp; extra</div>
+        <div class="price-list">
+          <div class="price-row"><span class="n">Maanmelk &mdash; vegan</span><span class="d"></span><span class="p">&euro; 9,50</span></div>
+          <div class="price-row"><span class="n">Glutenvrije Kern</span><span class="d"></span><span class="p">&euro; 10,50</span></div>
+          <div class="price-row"><span class="n">Suikervrije Eclipse</span><span class="d"></span><span class="p">&euro; 10,00</span></div>
+          <div class="price-row"><span class="n">Extra Boter</span><span class="d"></span><span class="p">&euro; 0,75</span></div>
+          <div class="price-row"><span class="n">Stroopvloed</span><span class="d"></span><span class="p">&euro; 1,00</span></div>
+          <div class="price-row"><span class="n">Kaars &amp; Verassing</span><span class="d"></span><span class="p">&euro; 2,50</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-divider" style="margin-top:6px"></div>
+
+    <div class="section-label" style="margin-bottom:22px">Te huur voor jouw event</div>
+    <div class="packages">
+      <div class="package">
+        <div class="pn">Borrel &amp; Bloem</div>
+        <div class="pd">2 uur &middot; 1 bakker<br>300 poffertjes</div>
+        <div class="pp">&euro; 325</div>
+        <div class="pt">tot 50 gasten</div>
+      </div>
+      <div class="package featured">
+        <div class="pn">Feestelijk Feestmaal</div>
+        <div class="pd">3 uur &middot; 2 bakkers<br>900 poffertjes &amp; dessertbar</div>
+        <div class="pp">&euro; 625</div>
+        <div class="pt">tot 150 gasten</div>
+      </div>
+      <div class="package">
+        <div class="pn">Cosmic Gala</div>
+        <div class="pd">5 uur &middot; 2 trucks &middot; barista<br>neon in jullie huisstijl</div>
+        <div class="pp">&euro; 1.450</div>
+        <div class="pt">tot 400 gasten</div>
+      </div>
+    </div>
+
+    <div class="info-blocks">
+      <div class="info-block">
+        <div class="info-block-title">Wat we nodig hebben</div>
+        <div class="info-block-body">Vlakke plek van <b>6 &times; 3 m</b> en één groep <b>16A</b>. Geen stroom? Dan komen we met de stille generator. Offerte binnen <span class="hl">24 uur</span>.</div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-title">Allergenen &amp; dieetwensen</div>
+        <div class="info-block-body">Standaard: <b>gluten</b>, <b>eieren</b>, <b>melk</b>. Vegan, glutenvrij en zonder toegevoegde suiker altijd mogelijk — geef het door bij je bestelling.</div>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <div class="qr-row">
+        <img src="images/qr-bestel.png" alt="QR-code">
+        <div class="qr-side">
+          <div class="k">Boek de truck</div>
+          <div class="v">poffertjeshuys.nl/boeken<br>0570 - 12 34 56 &middot; hallo@poffertjeshuys.nl</div>
+        </div>
+      </div>
+      <div class="divider" style="width:340px;margin:0 auto 14px"></div>
+      <div class="url">#COSMICPOFFERTJES &middot; @POFEERTJESHUYS</div>
+      <div class="bottom-deco"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
